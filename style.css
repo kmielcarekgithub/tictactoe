@@ -47,6 +47,70 @@ main{
     transition: 0.3s;
 }
 .game-square:hover{
-    background-color: #4d85b4;
-    border: 5px solid #014b75;
+    background-color: #3c678a;
+    border: 5px solid #003a5c;
+}
+
+@media (max-width:575px){
+    p{
+        font-size: 17px;
+    }
+} 
+@media (max-width:500px){
+    #game-container{
+        grid-template-columns: repeat(3, 100px);
+        grid-template-rows: repeat(3, 100px);
+    }
+    p{
+        font-size: 14px;
+    }
+    h1{
+        font-size: 40px;
+    }
+    h2{
+        font-size: 20px;
+    }
+    body{
+        height: 100vh !important;
+    }
+    header,footer{
+        height: 10% !important;
+    }
+    main{
+        height: auto !important;
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
+}
+@media (max-width:450px){
+    p{
+        font-size: 11px;
+    }
+}
+@media (max-width:350px){
+    body{
+        min-width: 350px;
+    }
+}
+@media (max-height:900px){
+    header,footer{
+        height: 10%;
+    }
+    main{
+        height: 80%;
+    }
+    body{
+        height: 100vh;
+    }
+}
+@media (max-height:800px){
+    body{
+        min-height: 800px;
+    }
+    header,footer{
+        height: 10%;
+    }
+    main{
+        height: 70%;
+    }
 }
