@@ -45,6 +45,10 @@ main{
     background-color: #60A3D9;
     margin: 5px;
     transition: 0.3s;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
 }
 .game-square:hover{
     background-color: #3c678a;
