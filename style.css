@@ -54,6 +54,15 @@ main{
     background-color: #3c678a;
     border: 5px solid #003a5c;
 }
+.game-square[won="won"]{
+    background-color: rgb(197, 77, 77);
+    border: 5px solid rgb(118, 0, 0);
+}
+
+.game-square[won="won"]:hover{
+    background-color: rgb(143, 63, 63);
+    border: 5px solid rgb(84, 0, 0);
+}
 
 @media (max-width:575px){
     p{
