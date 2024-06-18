@@ -9,16 +9,20 @@ let symbol = true;
 let gameStatus = false;
 let playAgainButtonStatus = false;
 const gameAgainButton = document.createElement("button");
+const xWinSpan = document.querySelector("#xwin")
+const oWinSpan = document.querySelector("#owin")
 
 //playerX variables
 const playerXBoxes = [];
 const winningXBoxes = [];
 let playerXCounter = 0;
+let xWin = 0;
 
 //playerO variables
 const playerOBoxes = [];
 const winningOBoxes = [];
 let playerOCounter = 0;
+let oWin = 0;
 
 //start of the game
 const startDiv = document.createElement("div");
@@ -85,6 +89,7 @@ const winChecker = () =>{
                 gameStatus = false;
                 playAgain()
                 gameAgainButton.style.display="block";
+                xWinSpan.textContent = ++xWin;
                 return 
             }
         })
@@ -103,6 +108,7 @@ const winChecker = () =>{
                 gameStatus = false;
                 playAgain();
                 gameAgainButton.style.display="block";
+                oWinSpan.textContent = ++oWin;
                 return 
             }
         })

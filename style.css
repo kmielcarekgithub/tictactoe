@@ -20,7 +20,8 @@ h2{
     font-size: 30px;
     font-weight: 600;
     margin-bottom: 20px;
-    }
+    margin-top: 20px;
+}
 p{
     font-size: 20px;
     font-weight: 600;
@@ -98,6 +99,10 @@ h3{
     opacity: 1;
     margin-bottom: 20px;
 }
+h4{
+    font-size: 25px;
+    font-weight: 600;
+}
 #gamePlayAgainButton{
     width: 140px;
     height: 60px;
@@ -110,6 +115,12 @@ h3{
 }
 #gamePlayAgainButton:hover{
     background-color: #9db1c2;
+}
+#xwin,#owin{
+    margin-left: 8px;
+}
+#xwin{
+    margin-right: 25px;
 }
 
 @media (max-width:575px){
@@ -146,6 +157,9 @@ h3{
         font-size: 15px;
         width: 90px;
     }
+    h4{
+        font-size: 20px;
+    }
 }
 @media (max-width:450px){
     p{
@@ -176,6 +190,13 @@ h3{
         height: 10%;
     }
     main{
-        height: 72%;
+        height: 73%;
+    }
+    #game-container{
+        margin-bottom: 5px;
+    }
+    h2{
+        margin-top: 5px;
+        margin-bottom: 5px;
     }
 }
