@@ -8,6 +8,7 @@ let roundCounter = 0;
 let symbol = true;
 let gameStatus = false;
 let playAgainButtonStatus = false;
+const gameAgainButton = document.createElement("button");
 
 //playerX variables
 const playerXBoxes = [];
@@ -32,7 +33,6 @@ startDiv.appendChild(gameStartText);
 startDiv.appendChild(gamePlayButton);
 
 //game functions
-const gameAgainButton = document.createElement("button");
 const playAgain = () => {
     if (gameStatus === false) {
         if(playAgainButtonStatus===false){
@@ -42,24 +42,24 @@ const playAgain = () => {
         }
         playAgainButtonStatus=true;
         gameAgainButton.addEventListener("click",()=>{
-        
-        gameStatus = true;
-        playerOCounter= 0;
-        playerXCounter = 0;
-        playerOBoxes.length = 0;
-        playerXBoxes.length = 0;
-        winningOBoxes.length = 0;
-        winningXBoxes.length = 0;
-        roundCounter = 0;
-        symbol = true;
-        currUserBar.innerHTML = 'Current User: <span id="curr-user">X</span>';
-        currUser = document.querySelector("#curr-user");
-        boxes.forEach((box)=>{
-            box.textContent = "";
-            box.setAttribute("used","no");
-            box.removeAttribute("won");
+            gameStatus = true;
+            playerOCounter= 0;
+            playerXCounter = 0;
+            playerOBoxes.length = 0;
+            playerXBoxes.length = 0;
+            winningOBoxes.length = 0;
+            winningXBoxes.length = 0;
+            roundCounter = 0;
+            symbol = true;
+            currUserBar.innerHTML = 'Current User: <span id="curr-user">X</span>';
+            currUser = document.querySelector("#curr-user");
+            boxes.forEach((box)=>{
+                box.textContent = "";
+                box.setAttribute("used","no");
+                box.removeAttribute("won");
+            })
+            gameAgainButton.style.display="none";
         })
-    })
     }
 }
 
@@ -84,6 +84,7 @@ const winChecker = () =>{
                 winningBoxesChange(winningXBoxes);
                 gameStatus = false;
                 playAgain()
+                gameAgainButton.style.display="block";
                 return 
             }
         })
@@ -100,7 +101,8 @@ const winChecker = () =>{
                 roundCounter = 9;
                 winningBoxesChange(winningOBoxes);
                 gameStatus = false;
-                playAgain()
+                playAgain();
+                gameAgainButton.style.display="block";
                 return 
             }
         })
@@ -115,7 +117,6 @@ const playerMove = (box) =>{
         // console.log(box.attributes.used.value);
         box.textContent = symbol == true?"X":"O"; 
         currUser.textContent = symbol == false?"X":"O";
-        console.log("dis")
         if(symbol){
             playerXBoxes.push(Number(box.id))
         }else if(symbol == false){
@@ -129,7 +130,7 @@ const playerMove = (box) =>{
         // checking if someone have won
         winChecker()
 
-        //changing the current user bar
+        // changing the current user bar
         roundCounter++;
         roundCounter == 9?currUserBar.textContent = "End of a game":"";
     } else{

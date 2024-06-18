@@ -55,12 +55,12 @@ main{
     background-color: #3c678a;
     border: 5px solid #003a5c;
 }
-.game-square[won="won"],#gamePlayAgainButton{
+.game-square[won="won"]{
     background-color: rgb(197, 77, 77);
     border: 5px solid rgb(118, 0, 0);
 }
 
-.game-square[won="won"]:hover,#gamePlayAgainButton:hover{
+.game-square[won="won"]:hover{
     background-color: rgb(143, 63, 63);
     border: 5px solid rgb(84, 0, 0);
 }
@@ -90,24 +90,26 @@ main{
 #gamePlayButton:hover{
     background-color: #3c678a;
     border: 4px solid #003a5c;
-    color: rgb(220, 213, 189)
+    color: rgb(255, 251, 236);
 }
 h3{
     font-size: 40px;
-    color: rgb(254, 246, 220);
+    color: rgb(255, 251, 236);
     opacity: 1;
     margin-bottom: 20px;
 }
 #gamePlayAgainButton{
     width: 140px;
-    height: 50px;
-    color: rgb(0, 0, 0);
+    height: 60px;
+    color: rgb(60, 60, 60);
     font-size: 20px;
-    font-weight: 500;
+    font-weight: 600;
     transition: 0.3s;
+    background-color: #aac1d7;
+    border: 5px solid rgb(70, 70, 70);
 }
 #gamePlayAgainButton:hover{
-    color: rgb(201, 201, 201);
+    background-color: #9db1c2;
 }
 
 @media (max-width:575px){
@@ -140,6 +142,10 @@ h3{
         margin-top: 40px;
         margin-bottom: 40px;
     }
+    #gamePlayAgainButton{
+        font-size: 15px;
+        width: 90px;
+    }
 }
 @media (max-width:450px){
     p{
@@ -170,6 +176,6 @@ h3{
         height: 10%;
     }
     main{
-        height: 70%;
+        height: 72%;
     }
 }
