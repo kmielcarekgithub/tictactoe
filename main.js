@@ -13,10 +13,11 @@ const xWinSpan = document.querySelector("#xwin")
 const oWinSpan = document.querySelector("#owin")
 
 //playerX variables
-const playerXBoxes = [];
+const playerXBoxes = []; 
 const winningXBoxes = [];
 let playerXCounter = 0;
 let xWin = 0;
+
 
 //playerO variables
 const playerOBoxes = [];
@@ -54,7 +55,7 @@ const playAgain = () => {
             winningOBoxes.length = 0;
             winningXBoxes.length = 0;
             roundCounter = 0;
-            symbol = true;
+            symbol = true; 
             currUserBar.innerHTML = 'Current User: <span id="curr-user">X</span>';
             currUser = document.querySelector("#curr-user");
             boxes.forEach((box)=>{
@@ -134,11 +135,16 @@ const playerMove = (box) =>{
         box.setAttribute("used","yes");
 
         // checking if someone have won
-        winChecker()
+        winChecker();
 
         // changing the current user bar
         roundCounter++;
-        roundCounter == 9?currUserBar.textContent = "End of a game":"";
+        if(roundCounter === 9){
+            currUserBar.textContent = "End of a game";
+            gameStatus = false;
+            gameAgainButton.style.display="block";
+            playAgain();
+        }
     } else{
         alert("YOU CAN'T PUT A SYMBOL IN THE SAME BOX MORE THAN ONCE!");
     };
